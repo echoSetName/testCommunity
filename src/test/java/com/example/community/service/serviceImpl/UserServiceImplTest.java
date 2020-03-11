@@ -30,4 +30,10 @@ class UserServiceImplTest {
         User result = userService.save(user);
         Assert.assertNotNull(result);
     }
+
+    @Test
+    void findBytoken(){
+        User user = userService.findBytoken("1");
+        Assert.assertNotNull(user);
+    }
 }

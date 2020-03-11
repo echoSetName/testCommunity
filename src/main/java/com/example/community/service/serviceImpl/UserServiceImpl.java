@@ -21,4 +21,9 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         return repository.save(user);
     }
+
+    public User findBytoken(String token) {
+
+        return repository.findByToken(token);
+    }
 }
