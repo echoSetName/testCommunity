@@ -25,13 +25,22 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
     @Override
     public PaginationDTO list(Integer page, Integer size) {
 
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer totalCount = questionService.count();
+        paginationDTO.setPagination(totalCount, page, size);
+        // 判断输入的页面是否超过范围
+        if(page < 1){
+            page = 1;
+        }
+        if(page > paginationDTO.getTotalPage()){
+            page =  paginationDTO.getTotalPage();
+        }
+
         // size*(page-1)
         Integer offse = size * (page - 1);
-        PageRequest request = PageRequest.of(offse,size);
+        PageRequest request = PageRequest.of(page-1,size);
         List<Question> questionList =  questionService.findAll(request).getContent();
         List<QuestionDTO> questionDTOList = new ArrayList<>();
-
-        PaginationDTO paginationDTO = new PaginationDTO();
         for(Question question:questionList){
             User user = userService.findOne(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
@@ -40,8 +49,6 @@ public class QuestionDTOServiceImpl implements QuestionDTOService {
             questionDTOList.add(questionDTO);
         }
         paginationDTO.setQuestions(questionDTOList);
-        Integer totalCount = questionService.count();
-        paginationDTO.setPagination(totalCount, page, size);
         return paginationDTO;
     }
 }

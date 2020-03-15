@@ -21,3 +21,6 @@ body{
 #description{
     resize: none;
 }
+.profile .section{
+    margin-top: 15px;
+}
