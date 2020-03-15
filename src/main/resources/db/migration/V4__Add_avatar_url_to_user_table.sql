@@ -1,0 +1,1 @@
+ALTER TABLE USER Add avatar_url VARCHAR(100) NULL ;
