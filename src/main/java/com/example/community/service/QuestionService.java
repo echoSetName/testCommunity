@@ -5,6 +5,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 public interface QuestionService {
 
     Question findOne(Integer id);
@@ -17,4 +19,6 @@ public interface QuestionService {
     Integer count();
 
     Page<Question> findAll(Pageable pageable);
+
+    List<Question> findAllByCreator(Integer creator);
 }

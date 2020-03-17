@@ -22,8 +22,13 @@ public class UserServiceImpl implements UserService {
         return repository.save(user);
     }
 
+    @Override
     public User findBytoken(String token) {
-
         return repository.findByToken(token);
+    }
+
+    @Override
+    public User findByAccountId(String accountId) {
+        return repository.findByAccountId(accountId);
     }
 }
