@@ -1,11 +1,10 @@
 package com.example.community.controller;
 
-import com.example.community.dataobject.User;
 import com.example.community.dto.AccessTokenDTO;
 import com.example.community.dto.GithubUser;
+import com.example.community.model.UserInfo;
 import com.example.community.provider.GithubProvider;
-import com.example.community.service.UserServlet;
-import com.example.community.service.serviceImpl.UserServiceImpl;
+import com.example.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,7 +23,7 @@ public class AuthorizeController {
     private GithubProvider githubProvider;
 
     @Autowired
-    private UserServlet userServlet;
+    private UserService userService;
 
     @Value("${github.client.id}")
     private String clientId;
@@ -46,7 +45,7 @@ public class AuthorizeController {
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accessToken);
         if(githubUser != null){
-            User user  = new User();
+            UserInfo user  = new UserInfo();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setName(githubUser.getName());
@@ -54,7 +53,7 @@ public class AuthorizeController {
             user.setAvatarUrl(githubUser.getAvatar_url());
             response.addCookie(new Cookie("token",token));
             //request.getSession().setAttribute("user",githubUser);
-            userServlet.createOrUpdate(user);
+            userService.createOrUpdate(user);
             return "redirect:/";
         }
         else{

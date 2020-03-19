@@ -1,6 +1,6 @@
 package com.example.community.dto;
 
-import com.example.community.dataobject.User;
+import com.example.community.model.UserInfo;
 import lombok.Data;
 
 @Data
@@ -16,5 +16,9 @@ public class QuestionDTO {
     private Integer viewCount;
     private Integer likeCount;
     private String tag;
-    private User user;
+    private UserInfo user;
+
+    public void setUser(UserInfo user) {
+        this.user = user;
+    }
 }

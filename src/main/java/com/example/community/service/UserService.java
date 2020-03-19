@@ -1,16 +1,38 @@
 package com.example.community.service;
 
-import com.example.community.dataobject.User;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import com.example.community.mapper.UserInfoMapper;
+import com.example.community.model.UserInfo;
+import com.example.community.model.UserInfoExample;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface UserService {
+import java.util.List;
 
-    User findOne(Integer id);
+@Service
+public class UserService {
 
-    User save(User user);
+    @Autowired
+    private UserInfoMapper userInfoMapper;
 
-    User findBytoken(String token);
-
-    User findByAccountId(String accountId);
+    public void createOrUpdate(UserInfo user){
+        UserInfoExample userExample = new UserInfoExample();
+        userExample.createCriteria().andAccountIdEqualTo(user.getAccountId());
+        List<UserInfo> users = userInfoMapper.selectByExample(userExample);
+        if(users.size() == 0){
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModified(user.getGmtCreate());
+            userInfoMapper.insert(user);
+        }
+        else{
+            UserInfo dbUser = users.get(0);
+            UserInfo updateUser = new UserInfo();
+            updateUser.setGmtModified(System.currentTimeMillis());
+            updateUser.setAvatarUrl(user.getAvatarUrl());
+            updateUser.setName(user.getName());
+            updateUser.setToken(user.getToken());
+            UserInfoExample example = new UserInfoExample();
+            example.createCriteria().andIdEqualTo(dbUser.getId());
+            userInfoMapper.updateByExampleSelective(updateUser, example);
+        }
+    }
 }

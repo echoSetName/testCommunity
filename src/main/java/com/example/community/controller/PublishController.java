@@ -1,12 +1,14 @@
 package com.example.community.controller;
 
-import com.example.community.dataobject.Question;
-import com.example.community.dataobject.User;
-import com.example.community.service.serviceImpl.QuestionServiceImpl;
+import com.example.community.dto.QuestionDTO;
+import com.example.community.model.Question;
+import com.example.community.model.UserInfo;
+import com.example.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,9 +16,19 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class PublishController {
-
     @Autowired
-    private QuestionServiceImpl questionService;
+    private QuestionService questionService;
+
+    @GetMapping("/publish/{id}")
+    public String edit(@PathVariable(name = "id")Integer id,
+                       Model model){
+        QuestionDTO question = questionService.getById(id);
+        model.addAttribute("title",question.getTitle());
+        model.addAttribute("description",question.getDescription());
+        model.addAttribute("tag",question.getTag());
+        model.addAttribute("id",question.getId());
+        return "publish";
+    }
 
     @GetMapping("/publish")
     public String publish(){
@@ -28,6 +40,7 @@ public class PublishController {
             @RequestParam("title") String title,
             @RequestParam("description") String description,
             @RequestParam("tag") String tag,
+            @RequestParam("id") Integer id,
             HttpServletRequest request,
             Model model){
 
@@ -47,7 +60,7 @@ public class PublishController {
             model.addAttribute("error","标签不能为空");
             return "publish";
         }
-        User user = (User) request.getSession().getAttribute("user");
+        UserInfo user = (UserInfo) request.getSession().getAttribute("user");
         if(user == null){
             model.addAttribute("error","用户未登录");
             return "publish";
@@ -58,11 +71,9 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
-        question.setGmtCreate(System.currentTimeMillis());
-        question.setGmtModified(question.getGmtCreate());
+        question.setId(id);
 
-
-        questionService.create(question);
+        questionService.createOrUpdate(question);
         return "redirect:/";
     }
 }
