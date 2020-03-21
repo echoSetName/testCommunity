@@ -1,7 +1,7 @@
 package com.example.community.model;
 
 public class UserInfo {
-    private Integer id;
+    private Long id;
 
     private String accountId;
 
@@ -15,11 +15,11 @@ public class UserInfo {
 
     private String avatarUrl;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
