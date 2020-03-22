@@ -39,7 +39,6 @@ function comment2target(targetId, targetType, content){
                     alert(response.message);
                 }
             }
-            console.log(response);
         },
         dataType: "json"
     })
@@ -47,7 +46,7 @@ function comment2target(targetId, targetType, content){
 
 function comment(e){
     var commentId = e.getAttribute("data-id");
-    var content = $("input-"+commentId).val();
+    var content = $("#input-"+commentId).val();
     comment2target(commentId, 2, content)
 }
 /**
@@ -55,30 +54,27 @@ function comment(e){
  */
 function collapseComments(e) {
     var id = e.getAttribute("data-id");
-    var comments = $("#comment-" + id);
+    var comments = $("#comment-"+id);
+
     if (comments.hasClass("in")) {
         comments.removeClass("in");
         e.classList.remove("active");
     }
     else {
-            /*$.each(data.data, function(comment){
-                var c =  $("<div/>",{
-                    "class":"col-lg-12 col-md-12 col-sm-12 col-xs-12",
-                    html:comment.content
-                })
-                items.push(c);
-            });
+       $.getJSON("/comment/"+id, function(data){
+           var subCommentContainer = $("#comment-"+id);
+           $.each(data.data, function(index, comment){
+               var c = $("<div/>",{
+                   "class" : "col-lg-12 col-md-12 col-sm-12 col-xs-12 commentInfo",
+                   html : comment.content
+               });
+               subCommentContainer.prepend(c);
+           });
 
-            commentBody.appendChild($("<div/>",{
-                "class":"col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse sub-comments",
-                "id":"comment-"+id,
-                html:items.join("")
-            }));*/
-
-            //展开二级评论
-            comments.addClass("in");
-            //标记展开二级评论
-            e.classList.add("active");
-
+           //展开二级评论
+           comments.addClass("in");
+           //标记二级评论展开状态
+           e.classList.add("active");
+       })
     }
 }
