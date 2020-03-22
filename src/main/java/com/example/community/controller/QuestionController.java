@@ -3,6 +3,7 @@ package com.example.community.controller;
 import com.example.community.dto.CommentDTO;
 import com.example.community.dto.QuestionDTO;
 import com.example.community.enums.CommentTypeEnum;
+import com.example.community.model.Question;
 import com.example.community.service.CommentService;
 import com.example.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,12 @@ public class QuestionController {
                            Model model){
         QuestionDTO questionDTO = questionService.getById(id);
         List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
+        List<QuestionDTO> relatedQuestions = questionService.selectRelated(questionDTO);
         //累加阅读数
         questionService.inView(id);
         model.addAttribute("question",questionDTO);
         model.addAttribute("comments",comments);
+        model.addAttribute("relatedQuestions",relatedQuestions);
         return "question";
     }
 }

@@ -1,3 +1,9 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
 body{
     background-color: #efefef;
     overflow-x: hidden;
@@ -11,20 +17,53 @@ body{
     float: right;
     margin-bottom: 15px;
 }
+.publish-tag-tab{
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.publish-tag-tab .label-info{
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px 10px 5px 5px;
+    white-space: normal;
+    font-size: 14px;
+}
+.publish-tag-tab .glyphicon-tags:before {
+    margin-right: 10px;
+}
 .media-object{
     width: 38px;
     height: 38px;
+}
+br + .text-desc{
+    transform: translateY(-20px);
+}
+a + .text-desc{
+    margin-bottom: 20px;
 }
 .text-desc{
     font-size: 12px;
     font-weight: normal;
     color: #999999;
+    display: block;
 }
 #description{
     resize: none;
 }
 .question-title{
     margin-top: 25px;
+}
+.question-tag{
+    margin-right: 5px;
+    font-size: 14px;
+}
+.question-tag .label-info{
+    font-size: 14px;
+}
+.question-wechat{
+    width: 50%;
 }
 .profile .section{
     margin-top: 15px;
@@ -54,15 +93,23 @@ body{
 h3, h4 {
     font-weight: bold;
 }
-
+.initiator{
+    margin-top: 25px;
+}
 .community-menu {
-    display: block;
     color: #999;
     margin-top: 10px;
     margin-bottom: 15px;
 }
-
-.community-menu .community-icon {
+.glyphicon-pencil{
+    display: inline-block;
+    color: #999;
+}
+.community-menu .glyphicon-pencil:hover{
+    color: #5bc0de;
+}
+.community-icon {
+    display: inline-block;
     width: 50px;
     height: 24px;
     line-height: 24px;
@@ -102,5 +149,18 @@ h3, h4 {
 }
 .sub-comments .btn {
     margin: 10px 0;
+}
+.re li:nth-child(1) a{
+    margin-top: 15px;
+}
+.relateds{
+    color: #155faa;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+.relateds:hover{
+    color:#5bc0de;
+    text-decoration: none;
 }
 

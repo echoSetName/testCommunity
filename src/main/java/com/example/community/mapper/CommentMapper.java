@@ -1,6 +1,5 @@
 package com.example.community.mapper;
 
-import com.example.community.dto.CommentDTO;
 import com.example.community.model.Comment;
 import com.example.community.model.CommentExample;
 import java.util.List;

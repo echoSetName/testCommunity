@@ -27,8 +27,13 @@
                     </div>
                     <div class="media-body">
                         <a  th:href="@{'/question/'+${questionDTO.getId()}}"><h4 class="media-heading" th:text="${questionDTO.title}"  th:href="@{'/question/'+${questionDTO.getId()}}"></h4></a>
-                        <span class="text-desc"><span th:text="${questionDTO.commentCount}"></span> 个回复  · <span
-                                th:text="${questionDTO.viewCount}"></span> 个浏览  · <span th:text="${#dates.format(questionDTO.gmtCreate, 'yyyy-MM-dd HH:mm')}"></span></span>
+                        <span class="text-desc">
+                            <span th:text="${questionDTO.commentCount}"></span> 个回复  · <span
+                                th:text="${questionDTO.viewCount}"></span> 个浏览  · <span th:text="${#dates.format(questionDTO.gmtCreate, 'yyyy-MM-dd HH:mm')}"></span>·
+                            <a th:href="@{'/publish/'+${questionDTO.id}}" th:if="${session.user != null && session.user.id == questionDTO.creator}">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</span>
+                            </a>
+                        </span>
                     </div>
                 </div>
                 <nav aria-label="Page navigation">
