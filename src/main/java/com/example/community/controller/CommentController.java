@@ -4,6 +4,7 @@ import com.example.community.dto.CommentCreateDTO;
 import com.example.community.dto.CommentDTO;
 import com.example.community.dto.ResultDTO;
 import com.example.community.enums.CommentTypeEnum;
+import com.example.community.enums.NotificationTypeEnum;
 import com.example.community.exception.CustomizeErrorCode;
 import com.example.community.model.Comment;
 import com.example.community.model.UserInfo;
@@ -21,6 +22,7 @@ public class CommentController {
 
     @Autowired
     private CommentService commentService;
+
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
@@ -42,7 +44,7 @@ public class CommentController {
         comment.setCommentator(userInfo.getId());
         comment.setLikeCount(0);
         comment.setCommentCount(0);
-        commentService.insert(comment);
+        commentService.insert(comment, userInfo);
         return ResultDTO.okOf();
     }
 

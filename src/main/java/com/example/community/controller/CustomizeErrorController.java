@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Map;
 
 @Controller
-@RequestMapping({"${server.error.path:${error.path:/error}}"})
+@RequestMapping({"${server.error.path:$*error.path:/error}}"})
 public class CustomizeErrorController implements ErrorController {
 
     @Override

@@ -1,0 +1,41 @@
+2020-03-24 22:16:34.760  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VDCEQO9 with PID 5708 (E:\code\community\target\classes started by shenzexin in E:\code\community)
+2020-03-24 22:16:34.760  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-03-24 22:16:34.972  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-03-24 22:16:34.972  INFO 5708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-24 22:16:34.972  INFO 5708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-24 22:16:34.987  INFO 5708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-24 22:16:34.987  INFO 5708 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 225 ms
+2020-03-24 22:16:35.095  INFO 5708 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-24 22:16:35.103  INFO 5708 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-24 22:16:35.157  INFO 5708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-24 22:16:35.166  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-03-24 22:16:35.166  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 0.426 seconds (JVM running for 83.693)
+2020-03-24 22:16:35.167  INFO 5708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-24 22:17:09.030  INFO 5708 --- [Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-24 22:17:09.826  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VDCEQO9 with PID 5708 (E:\code\community\target\classes started by shenzexin in E:\code\community)
+2020-03-24 22:17:09.826  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-03-24 22:17:10.048  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-03-24 22:17:10.049  INFO 5708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-24 22:17:10.049  INFO 5708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-24 22:17:10.065  INFO 5708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-24 22:17:10.065  INFO 5708 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 237 ms
+2020-03-24 22:17:10.179  INFO 5708 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-24 22:17:10.189  INFO 5708 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-24 22:17:10.246  INFO 5708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-24 22:17:10.255  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-03-24 22:17:10.256  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 0.449 seconds (JVM running for 118.784)
+2020-03-24 22:17:10.257  INFO 5708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-24 22:17:20.168  INFO 5708 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-24 22:17:21.359  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VDCEQO9 with PID 5708 (E:\code\community\target\classes started by shenzexin in E:\code\community)
+2020-03-24 22:17:21.359  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-03-24 22:17:21.844  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-03-24 22:17:21.845  INFO 5708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-24 22:17:21.845  INFO 5708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-24 22:17:21.950  INFO 5708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-24 22:17:21.950  INFO 5708 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 589 ms
+2020-03-24 22:17:22.355  INFO 5708 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-24 22:17:22.366  INFO 5708 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-24 22:17:22.437  INFO 5708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-24 22:17:22.448  INFO 5708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-03-24 22:17:22.448  INFO 5708 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 1.122 seconds (JVM running for 130.976)
+2020-03-24 22:17:22.449  INFO 5708 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
