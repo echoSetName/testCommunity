@@ -8,6 +8,9 @@ body{
     background-color: #efefef;
     overflow-x: hidden;
 }
+.index-name{
+    margin-top: 20px;
+}
 .main{
     margin: 30px;
     background-color: white;

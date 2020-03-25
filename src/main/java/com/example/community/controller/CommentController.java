@@ -23,7 +23,6 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     public Object post(@RequestBody CommentCreateDTO commentCreateDTO,
@@ -50,7 +49,7 @@ public class CommentController {
 
     @ResponseBody
     @RequestMapping(value = "/comment/{id}", method = RequestMethod.GET)
-    public ResultDTO comments(@PathVariable(name = "id")Long id){
+    public ResultDTO<List<CommentDTO>> comments(@PathVariable(name = "id")Long id){
         List<CommentDTO> commentDTOS = commentService.listByTargetId(id, CommentTypeEnum.COMMENT);
         return ResultDTO.okOf(commentDTOS);
     }

@@ -66,7 +66,12 @@ public class QuestionService {
         Integer offse = size * (page - 1);
         questionQueryDTO.setPage(offse);
         questionQueryDTO.setSize(size);
-        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
+        List<Question> questions;
+        if (totalCount > 0){
+            questions = questionExtMapper.selectBySearch(questionQueryDTO);
+        }else{
+            questions = new ArrayList<>();
+        }
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for(Question question:questions){
@@ -107,6 +112,7 @@ public class QuestionService {
         // size*(page-1)
         Integer offse = size * (page - 1);
         QuestionExample example = new QuestionExample();
+        example.setOrderByClause("gmt_create desc");
         example.createCriteria().andCreatorEqualTo(userId);
         List<Question> questions = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offse, size));
 

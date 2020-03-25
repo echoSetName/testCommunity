@@ -1,6 +1,8 @@
 package com.example.community.controller;
 
 import com.example.community.dto.PaginationDTO;
+import com.example.community.exception.CustomizeErrorCode;
+import com.example.community.exception.CustomizeException;
 import com.example.community.model.UserInfo;
 import com.example.community.service.NotificationService;
 import com.example.community.service.QuestionService;
@@ -47,6 +49,9 @@ public class ProfileController {
             model.addAttribute("section","replies");
             model.addAttribute("pagination",paginationDTO);
             model.addAttribute("sectionName","最新回复");
+        }
+        else{
+            throw new CustomizeException(CustomizeErrorCode.WHAT_IS_YOUR_OPERATION);
         }
         return "profile";
     }
