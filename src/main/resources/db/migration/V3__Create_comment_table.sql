@@ -6,5 +6,6 @@ CREATE TABLE comment  (
   gmt_create bigint NOT NULL,
   gmt_modified bigint NOT NULL,
   like_count int DEFAULT 0,
-  comment_count int DEFAULT 0
+  comment_count int DEFAULT 0,
+  CONTENT VARCHAR(1024) NULL
 ) ;

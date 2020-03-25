@@ -4,5 +4,6 @@ CREATE TABLE USERINFO  (
   name varchar(50)  NOT NULL,
   token char(36),
   gmt_create bigint DEFAULT 0,
-  gmt_modified bigint DEFAULT 0
+  gmt_modified bigint DEFAULT 0,
+  avatar_url VARCHAR(100) NULL
 )
