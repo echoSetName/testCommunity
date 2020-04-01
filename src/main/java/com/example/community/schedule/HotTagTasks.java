@@ -29,7 +29,6 @@ public class HotTagTasks {
     public void hatTagSchedule() {
         int offse = 0;
         int limit = 5;
-        log.info("hatTagSchedule start {}", new Date());
         List<Question> list = new ArrayList<>();
         Map<String, Integer> priorities = new HashMap<>();
         while(offse == 0 || list.size() == limit) {
@@ -46,10 +45,10 @@ public class HotTagTasks {
                         priorities.put(tag, 5 + question.getCommentCount());
                     }
                 }
+
             }
             offse += limit;
         }
         hotTagCache.updateTags(priorities);
-        log.info("hatTagSchedule stop {}", new Date());
     }
 }

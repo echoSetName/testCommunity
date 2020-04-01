@@ -11,6 +11,19 @@ body{
 .index-name{
     margin-top: 20px;
 }
+.glyphicon-user{
+    color: #99999978;
+}
+.indexDescription{
+    display:inline-block;
+    max-width: 25em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /*超出部分用...代替*/
+}
+.re .label-info{
+    font-size: 12px;
+}
 .main{
     margin: 30px;
     background-color: white;
@@ -31,7 +44,7 @@ body{
     margin-right: 10px;
     padding: 5px 10px 5px 5px;
     white-space: normal;
-    font-size: 14px;
+    font-size: 12px;
 }
 .publish-tag-tab .glyphicon-tags:before {
     margin-right: 10px;
